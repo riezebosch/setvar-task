@@ -1,0 +1,46 @@
+{
+    "manifestVersion": 1,
+    "id": "setvar",
+    "name": "setvar",
+    "version": "0.1.20",
+    "publisher": "riezebosch",
+    "public": true,
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+    "description": "Set pipeline variables from stdout",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "icons": {
+        "default": "images/extension-icon.png"
+    },
+    "files": [
+        {
+            "path": "setvar"
+        }
+    ],
+    "content": {
+        "details": {
+            "path": "README.md"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/riezebosch/setvar"
+    },
+    "contributions": [
+        {
+            "id": "setvar",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "setvar"
+            }
+        }
+    ]
+}

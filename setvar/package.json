@@ -1,0 +1,29 @@
+{
+  "name": "setvar",
+  "version": "0.0.1",
+  "description": "Set pipeline variables in Azure DevOps",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "tsc -p .",
+    "build:prod": "npm i && npm run build && npm prune --production && npm dedupe",
+    "pretest": "npm run build",
+    "test": "mocha --recursive",
+    "upload": "npm run build:prod && tfx build tasks upload --task-path ."
+  },
+  "keywords": [
+    "packer",
+    "vsts"
+  ],
+  "author": "Manuel Riezebosch",
+  "license": "ISC",
+  "dependencies": {
+    "mz": "^2.7.0",
+    "vsts-task-tool-lib": "^0.10.0"
+  },
+  "devDependencies": {
+    "@types/mocha": "^5.2.5",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "typescript": "^3.1.6"
+  }
+}

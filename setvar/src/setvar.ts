@@ -2,7 +2,7 @@ import * as taskLib from 'vsts-task-lib/task';
 import * as toolLib from 'vsts-task-tool-lib/tool';
 import { fs } from 'mz';
 import * as path from 'path';
-import { chmod } from 'mz/fs';
+import * as chmodr from 'chmodr';
 
 async function run() {
     try {
@@ -11,7 +11,7 @@ async function run() {
 
         if (!toolPath) {
             toolPath = await toolLib.cacheDir(path.join(__dirname, '..', 'bin', tool(taskLib.osType())), 'setvar', v);
-            await chmod(path.join(toolPath, 'setvar'), 0o777);
+            await chmodr(toolPath, 0o777);
         }
 
         toolLib.prependPath(toolPath);

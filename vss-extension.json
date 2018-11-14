@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "setvar",
     "name": "setvar",
-    "version": "0.1.20",
+    "version": "0.1.22",
     "publisher": "riezebosch",
     "public": true,
     "targets": [
